@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>气泡框</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#title {
+				width: 150px;
+				border: 1px solid blue;
+				padding: 10px;
+				position: absolute;
+				left: 75px;
+				top: 30px;
+			}
+			
+			#title::after {
+				left: -18px;
+				top: 16px;
+				position: absolute;
+				content: "";
+				width: 0;
+				height: 0;
+				border: 9px solid;
+				border-color: transparent #ffffff transparent transparent;
+			}
+			
+			#title::before {
+				left: -20px;
+				top: 15px;
+				position: absolute;
+				content: "";
+				width: 0;
+				height: 0;
+				border: 10px solid;
+				border-color: transparent blue transparent transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div style="background: red;width: 50px;height: 50px;margin-left: 10px;margin-top: 30px;">头像</div>
+		<div id="title">这是一个DIV，也可以说是个提示框，箭头也是用CSS写的</div>
+	</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>气泡框的实现</title>
+		<style type="text/css">
+			.bubble_diailog {
+				position: relative;
+				background: #ffc;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				margin: 20px 0 0 20px;
+			}
+			
+			.bubble_diailog i,
+			.bubble_diailog b {
+				position: absolute;
+				width: 0;
+				height: 0;
+				overflow: hidden;
+				border-width: 5px;
+				display: block;
+			}
+			/*上*/
+			
+			.bubble_diailog i.t,
+			.bubble_diailog b.t {
+				border-style: dashed dashed solid dashed;
+			}
+			
+			.bubble_diailog i.t {
+				top: -10px;
+				left: 30px;
+				border-color: transparent transparent #ccc transparent;
+			}
+			
+			/*.bubble_diailog b.t {
+				top: -9px;
+				left: 30px;
+				border-color: transparent transparent #ffc transparent;
+			}*/
+			/*下*/
+			
+			.bubble_diailog i.b,
+			.bubble_diailog b.b {
+				border-style: solid dashed dashed dashed;
+			}
+			
+			.bubble_diailog i.b {
+				bottom: -10px;
+				left: 30px;
+				border-color: #ccc transparent transparent transparent;
+			}
+			
+			.bubble_diailog b.b {
+				bottom: -9px;
+				left: 30px;
+				border-color: #ffc transparent transparent transparent;
+			}
+			/*左*/
+			
+			.bubble_diailog i.l,
+			.bubble_diailog b.l {
+				border-style: dashed solid dashed dashed;
+			}
+			
+			.bubble_diailog i.l {
+				top: 29px;
+				left: -10px;
+				border-color: transparent #ccc transparent transparent;
+			}
+			
+			.bubble_diailog b.l {
+				top: 29px;
+				left: -9px;
+				border-color: transparent #ffc transparent transparent;
+			}
+			/*右*/
+			
+			.bubble_diailog i.r,
+			.bubble_diailog b.r {
+				border-style: dashed dashed dashed solid;
+			}
+			
+			.bubble_diailog i.r {
+				top: 29px;
+				right: -10px;
+				border-color: transparent transparent transparent #ccc;
+			}
+			
+			.bubble_diailog b.r {
+				top: 29px;
+				right: -9px;
+				border-color: transparent transparent transparent #ffc;
+			}
+			
+			.size_1 {
+				width: 200px;
+				height: 80px;
+			}
+			/**
+  * IE ARGB背景半透明滤镜溢出隐藏bug
+  * http://himeters.com/ie-argb-overflowhidden-bug
+ */
+			
+			.bubble_opacity {
+				border-radius: 3px;
+				margin: -40px 0 0 20px;
+				font-size: 14px;
+				background-color: rgba(0, 0, 0, .8);
+				position: relative;
+			}
+			
+			.bubble_opacity,
+			.bubble_opacity .in {
+				width: 200px;
+				height: 80px;
+			}
+			
+			.bubble_opacity .in {
+				filter: progid:dximagetransform.microsoft.gradient(startcolorstr="#CC000000", endcolorstr="#CC000000");
+			}
+			
+			.bubble_opacity i {
+				overflow: hidden;
+				display: block;
+				height: 0;
+				width: 0;
+				border-style: dashed dashed solid dashed;
+				border-color: transparent transparent #000 transparent;
+				position: absolute;
+				top: -10px;
+				left: 30px;
+				border-width: 5px;
+				opacity: .8;
+				filter: alpha(opacity=80);
+			}
+			
+			.bubble_opacity p {
+				padding: 20px 0 0 20px;
+				color: #fff;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- 上 -->
+		<div class="bubble_diailog size_1">
+			<i class="t"></i>
+			<b class="t"></b>
+		</div>
+		<!-- 下 -->
+		<div class="bubble_diailog size_1">
+			<i class="b"></i>
+			<b class="b"></b>
+		</div>
+		<!-- 左 -->
+		<div class="bubble_diailog size_1">
+			<i class="l"></i>
+			<b class="l"></b>
+		</div>
+		<!-- 右 -->
+		<div class="bubble_diailog size_1">
+			<i class="r"></i>
+			<b class="r"></b>
+		</div>
+		<!-- 半透明 -->
+		<div class="bubble_opacity">
+			<i></i>
+			<div class="in">
+				<p>亲，我是半透明的哦！~</p>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>气泡框</title>
+		<style type="text/css">
+			.bubble {
+				position: relative;
+				width: 100px;
+				height: 40px;
+				border: 1px solid #000000;
+				border-radius: 5px;
+				background: red;
+			}
+			.bubble_angle {
+				position: absolute;
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 7px;
+				top: -14px;
+				left: 20px;
+				border-color: transparent transparent #000 transparent;
+			}
+			.bubble_content {
+				position: absolute;
+				height: 0;
+				width: 0;
+				left: 20px;
+				top: -13px;
+				border-style: solid;
+				border-width: 7px;
+				border-color: transparent transparent red transparent;
+			}
+			.content {
+				font-size: 11px;
+				color: #FFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bubble">
+			<div class="bubble_angle"></div>
+			<div class="bubble_content"></div>
+			<p class="content">自己定义的气泡框</p>
+		</div>
+	</body>
+</html>
